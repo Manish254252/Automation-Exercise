@@ -1,0 +1,9 @@
+{
+    "Json Placeholder API 3": {
+        "data": {
+            "title": "foo",
+            "body": "bar",
+            "userId": 1
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "Beeceptor Placeholder API 1": {
+        "data": {
+            "username": "michael",
+            "password": "success-password"
+        }
+    },
+     "Beeceptor Placeholder API 2": {
+        "data": {
+            "username": "michael",
+            "password": "failed-password"
+        }
+    }
+}

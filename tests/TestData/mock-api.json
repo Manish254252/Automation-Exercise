@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "Mock Post 1",
+      "body": "This is mocked"
+    },
+    {
+      "userId": 2,
+      "id": 2,
+      "title": "Mock Post 2",
+      "body": "Another mock"
+    }
+  ],
+  "login": [
+    {
+      "username": "testuser",
+      "password": "1234",
+      "token": "mock-token-123"
+    },
+    {
+      "id": "dcc3",
+      "username": "testuser",
+      "password": "1234"
+    },
+    {
+      "id": "8887",
+      "username": "testuser",
+      "password": "1234"
+    }
+  ]
+}
