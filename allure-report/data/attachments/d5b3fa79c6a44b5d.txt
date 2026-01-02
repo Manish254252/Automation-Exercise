@@ -1,0 +1,5 @@
+{
+  method: 'POST',
+  url: '/blogs',
+  message: 'Mock response for any /api/* route'
+}

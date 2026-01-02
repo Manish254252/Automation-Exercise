@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.3",
+    "allure-commandline": "^2.36.0",
+    "allure-playwright": "^3.4.3",
+    "json-server": "^1.0.0-beta.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {},
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "env": "^0.0.2",
+    "express": "^5.2.1",
+    "logger": "^0.0.1",
+    "winston": "^3.19.0"
+  }
+}
