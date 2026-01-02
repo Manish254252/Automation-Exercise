@@ -1,0 +1,38 @@
+2026-01-02 15:57:33 [info]: Get API Executed
+2026-01-02 15:57:33 [info]: [
+  {
+    id: '3',
+    name: 'Apple iPhone 12 Pro Max',
+    data: { color: 'Cloudy White', 'capacity GB': 512 }
+  },
+  {
+    id: '5',
+    name: 'Samsung Galaxy Z Fold2',
+    data: { price: 689.99, color: 'Brown' }
+  },
+  {
+    id: '7',
+    name: 'Apple MacBook Pro 16',
+    data: {
+      year: 2019,
+      price: 1849.99,
+      'CPU model': 'Intel Core i9',
+      'Hard disk size': '1 TB'
+    }
+  }
+]
+2026-01-02 15:57:33 [info]: 200
+2026-01-02 15:57:33 [info]: {
+  date: 'Fri, 02 Jan 2026 10:27:35 GMT',
+  'content-type': 'application/json',
+  'transfer-encoding': 'chunked',
+  connection: 'keep-alive',
+  server: 'cloudflare',
+  nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}',
+  vary: 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers',
+  'cf-cache-status': 'DYNAMIC',
+  'report-to': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=xklHFEIUOXmJWArTkO0Ec5LlO6wndzgxqsd0%2Fmo7sX01o2oox9wXdgIN0YIl4lraSc6rAG6HN%2BAxHx%2BDzB9TMpwf3Ve2vu0Ge7%2FeMiGxsdrmz8U%3D"}]}',
+  'content-encoding': 'br',
+  'cf-ray': '9b79908ea9421203-MAA',
+  'alt-svc': 'h3=":443"; ma=86400'
+}
