@@ -14,7 +14,39 @@ The project includes:
 
 ## 🧠 About the Project
 
-This repository contains automated test scripts for various user flows and API endpoints of a demo e-commerce website (https://automationexercise.com/) — a site built for automation practice across UI and API. The framework is designed for scalability, maintainability, and clarity. It follows best practices including Page Object Model (POM), environment configurations, reusable API clients, logging, schema validations, and reporting.
+This repository contains automated test scripts for various user flows and API endpoints of a demo e-commerce website (AutomationExercise
+) — a site built for automation practice across UI and API.
+
+The framework is designed for scalability, maintainability, and clarity, and follows best practices including:
+
+Page Object Model (POM) for UI tests
+
+Environment-based configurations for multiple base URLs
+
+Reusable API clients for consistent request handling
+
+Logging for debugging and traceability
+
+JSON schema validations for API responses
+
+Allure reporting with meaningful test steps using test.step()
+## ✅ Base URLs
+| Environment        | Base URL                                      |
+| ------------------ | --------------------------------------------- |
+| Beeceptor Mock API | `https://json-placeholder.mock.beeceptor.com` |
+| Dummy JSON API     | `https://dummyjson.com`                       |
+
+## ✅ Tested API Endpoints
+
+| Feature                 | Endpoint          | Method | Base URL Environment |
+| ----------------------- | ----------------- | ------ | -------------------- |
+| Fetch all users         | `/users`          | GET    | Bee / Dummy          |
+| Fetch posts             | `/posts`          | GET    | Bee                  |
+| Login                   | `/login`          | POST   | Bee                  |
+| Create account / signup | `/signup`         | POST   | Dummy                |
+| Logout                  | `/logout`         | POST   | Dummy                |
+| Delete account          | `/delete-account` | DELETE | Dummy                |
+
 
 ---
 
