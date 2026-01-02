@@ -64,7 +64,31 @@ This repository contains automated test scripts for various user flows and API e
 ```bash
 git clone https://github.com/Manish254252/Automation-Exercise.git
 cd Automation-Exercise
-### 2.Install dependencies
+```
+### 2. Install dependencies
+```
 npm install
+```
+### 3. Install Playwright browsers
+```
+npx playwright install
+```
+### 4. Run all tests
+```
+npx playwright test
+```
 
+## 📊 Allure Reporting
+
+### The framework integrates Allure Reporting with meaningful test steps.
+
+### Generate Allure Report
+```
+npx allure generate allure-results --clean -o allure-report
+```
+
+### Open Allure Report
+```
+npx allure open allure-report
+```
 
