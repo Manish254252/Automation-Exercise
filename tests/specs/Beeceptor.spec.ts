@@ -5,12 +5,14 @@ import { loadTestData } from "../../utils/TestDataLoader";
 import { validateSchema } from "../../utils/SchemaValidator";
 import posts from "../schemas/Beeceptor.schema.json"
 import User from "../schemas/User.schema.json"
+import { BASE_URLS ,HEADERS} from "../../utils/env";
 
 
 
 test('Beeceptor Placeholder API 1', async ({ request },testInfo) => {
      const testData = loadTestData(testInfo)
-    const ApiUtils = new ApiClient(request)
+     logger.info(BASE_URLS.Bee)
+    const ApiUtils = new ApiClient(request,BASE_URLS.Bee)
     const response = ApiUtils.post("/login",testData.data)
     const json = (await response).json()
     const statuscode = (await response).status()
@@ -21,7 +23,7 @@ test('Beeceptor Placeholder API 1', async ({ request },testInfo) => {
 
 test('Beeceptor Placeholder API 2', async ({ request },testInfo) => {
     const testData = loadTestData(testInfo)
-    const ApiUtils = new ApiClient(request)
+    const ApiUtils = new ApiClient(request,BASE_URLS.Bee)
     const response = ApiUtils.post("/login",testData.data)
     const json = (await response).json()
     const statuscode = (await response).status()
@@ -32,7 +34,7 @@ test('Beeceptor Placeholder API 2', async ({ request },testInfo) => {
 
 test('Beeceptor Placeholder API 3', async ({ request },testInfo) => {
     // const testData = loadTestData(testInfo)
-    const ApiUtils = new ApiClient(request)
+    const ApiUtils = new ApiClient(request,BASE_URLS.Bee)
     const response = ApiUtils.get("/posts")
     const json = (await response).json()
     const status = (await response).status()    
@@ -43,7 +45,7 @@ test('Beeceptor Placeholder API 3', async ({ request },testInfo) => {
 
 test('Beeceptor Placeholder API 4', async ({ request },testInfo) => {
     // const testData = loadTestData(testInfo)
-    const ApiUtils = new ApiClient(request)
+    const ApiUtils = new ApiClient(request,BASE_URLS.Bee)
     const response = ApiUtils.get("/users")
     const json = (await response).json()
     const status = (await response).status()    

@@ -3,6 +3,7 @@ import { log } from "node:console";
 import { logger } from "../../utils/Logger";
 import { ApiClient } from "../../utils/ApiUtils";
 import { loadTestData } from "../../utils/TestDataLoader";
+import { BASE_URLS } from "../../utils/env";
 
 test('API 1: Get All Products List', async ({ request }) => {
 
@@ -47,7 +48,7 @@ test('API 4: Search Product with query parameter', async ({ request }) => {
 });
 
 test('Json Placeholder API 1', async ({ request }) => {
-    const ApiUtils = new ApiClient(request)
+    const ApiUtils = new ApiClient(request,BASE_URLS.Bee)
     const response = ApiUtils.get("/posts/1")
     const json = (await response).json()
     const statuscode = (await response).status()
