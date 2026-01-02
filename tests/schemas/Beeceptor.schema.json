@@ -1,16 +1,16 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "array",
   "items": {
     "type": "object",
-    "required": [
-      "userId",
-      "id",
-      "title",
-      "body",
-      "link",
-      "comment_count"
-    ],
+    "required": ["userId", "id", "title", "body", "link", "comment_count"],
+    "properties": {
+      "userId": { "type": "number" },
+      "id": { "type": "number" },
+      "title": { "type": "string" },
+      "body": { "type": "string" },
+      "link": { "type": "string", "format": "uri" },
+      "comment_count": { "type": "number" }
+    },
     "additionalProperties": false
   }
 }
