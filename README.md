@@ -32,8 +32,8 @@ This repository contains automated test scripts for various user flows and API e
 ---
 
 ## 📁 Project Structure
-root/
-├── .github/
+      root/
+      ├── .github/
 ├── tests/
 │ ├── specs/
 │ └── ... (UI & API tests)
@@ -55,6 +55,7 @@ root/
 
 
 ---
+
 
 ## 🚀 Setup & Installation
 
