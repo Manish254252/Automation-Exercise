@@ -3,30 +3,6 @@ import { SignUpPage } from '../pages/SignUpPage';
 import { UserData } from '../../utils/Data';
 import { generateRandomData } from '../../utils/Misc';
 
-// test('has title', async ({ page }) => {
-//   await page.goto('https://playwright.dev/');
-
-//   // Expect a title "to contain" a substring.
-//   await expect(page).toHaveTitle(/Playwright/);
-// });
-
-// test('get started link', async ({ page }) => {
-//   await page.goto('https://playwright.dev/');
-
-//   // Click the get started link.
-//   await page.getByRole('link', { name: 'Get started' }).click();
-
-//   // Expects page to have a heading with the name of Installation.
-//   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-// });
-
-// test('Search Bar', async ({ page }) => {
-//   await page.goto('https://playwright.dev/');
-
-//   // Click the get started link.
-//   await page.getByLabel("Search (Ctrl+K)").click()
-//   await page.locator("#docsearch-input").fill("Report")
-// });
 let userData: UserData;
 test.beforeEach(async () => {
   userData = {
@@ -43,46 +19,108 @@ test.beforeEach(async () => {
 
 test('Test Case 1: Register User', async ({ page }) => {
   const signup = new SignUpPage(page);
-  await signup.navigate()
-  await signup.signUp(userData)
-  await signup.fillAccountInfo(userData)
-  await signup.submitAndVerify()
-  await signup.verifyLogoutIsVisible()
-  await signup.verifyDeleteAccIsVisible()
-  await signup.clickDeleteAccountAndVerifyAccDeleted()
+
+  await test.step('Navigate to application home page', async () => {
+    await signup.navigate();
+  });
+
+  await test.step('Register new user with valid details', async () => {
+    await signup.signUp(userData);
+  });
+
+  await test.step('Fill account information', async () => {
+    await signup.fillAccountInfo(userData);
+  });
+
+  await test.step('Submit registration form and verify account creation', async () => {
+    await signup.submitAndVerify();
+  });
+
+  await test.step('Verify Logout option is visible', async () => {
+    await signup.verifyLogoutIsVisible();
+  });
+
+  await test.step('Verify Delete Account option is visible', async () => {
+    await signup.verifyDeleteAccIsVisible();
+  });
+
+  await test.step('Delete account and verify account deletion', async () => {
+    await signup.clickDeleteAccountAndVerifyAccDeleted();
+  });
 });
 
-test('Test Case 2: Login User with correct email and password', async ({ page }) => {
 
+test('Test Case 2: Login User with correct email and password', async ({ page }) => {
   const signup = new SignUpPage(page);
-  await signup.navigate()
-  await signup.signUp(userData)
-  await signup.fillAccountInfo(userData)
-  await signup.submitAndVerify()
-  await signup.clickLogout()
-  await signup.signIn(userData)
-  await signup.verifySignInSuccess(userData)
-  await signup.verifyDeleteAccIsVisible()
-  await signup.clickDeleteAccountAndVerifyAccDeleted()
+
+  await test.step('Navigate to application home page', async () => {
+    await signup.navigate();
+  });
+
+  await test.step('Register a new user', async () => {
+    await signup.signUp(userData);
+    await signup.fillAccountInfo(userData);
+    await signup.submitAndVerify();
+  });
+
+  await test.step('Logout from the application', async () => {
+    await signup.clickLogout();
+  });
+
+  await test.step('Login with valid credentials', async () => {
+    await signup.signIn(userData);
+  });
+
+  await test.step('Verify successful login', async () => {
+    await signup.verifySignInSuccess(userData);
+  });
+
+  await test.step('Delete account after successful login', async () => {
+    await signup.verifyDeleteAccIsVisible();
+    await signup.clickDeleteAccountAndVerifyAccDeleted();
+  });
 });
 
 test('Test Case 3: Login User with incorrect email and password', async ({ page }) => {
-
   const signup = new SignUpPage(page);
-  await signup.navigate()
-  await signup.signIn(userData)
-  await signup.isIncorrectLoginErrorVisible()
+
+  await test.step('Navigate to application home page', async () => {
+    await signup.navigate();
+  });
+
+  await test.step('Attempt login with invalid credentials', async () => {
+    await signup.signIn(userData);
+  });
+
+  await test.step('Verify incorrect login error message is displayed', async () => {
+    await signup.isIncorrectLoginErrorVisible();
+  });
 });
 
-test('Test Case 4: Logout User', async ({ page }) => {
 
+test('Test Case 4: Logout User', async ({ page }) => {
   const signup = new SignUpPage(page);
-  await signup.navigate()
-  await signup.signUp(userData)
-  await signup.fillAccountInfo(userData)
-  await signup.submitAndVerify()
-  await signup.clickLogout()
-  await signup.signIn(userData)
-  await signup.verifySignInSuccess(userData)
-  await signup.clickLogout()
+
+  await test.step('Navigate to application home page', async () => {
+    await signup.navigate();
+  });
+
+  await test.step('Register and login user', async () => {
+    await signup.signUp(userData);
+    await signup.fillAccountInfo(userData);
+    await signup.submitAndVerify();
+  });
+
+  await test.step('Logout from application', async () => {
+    await signup.clickLogout();
+  });
+
+  await test.step('Login again with valid credentials', async () => {
+    await signup.signIn(userData);
+    await signup.verifySignInSuccess(userData);
+  });
+
+  await test.step('Logout again and verify session ends', async () => {
+    await signup.clickLogout();
+  });
 });
