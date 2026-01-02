@@ -34,24 +34,24 @@ This repository contains automated test scripts for various user flows and API e
 ## 📁 Project Structure
       root/
       ├── .github/
-├── tests/
-│ ├── specs/
-│ └── ... (UI & API tests)
-├── pages/
-│ └── *.ts (Page Objects)
-├── utils/
-│ ├── ApiUtils.ts
-│ ├── Logger.ts
-│ ├── env.ts
-│ ├── SchemaValidator.ts
-│ ├── TestDataLoader.ts
-│ └── Misc.ts
-├── schemas/
-│ └── *.schema.json
-├── test-data/
-│ └── *.json
-├── allure-results/
-└── playwright.config.ts
+            ├── tests/
+            │ ├── specs/
+            │ └── ... (UI & API tests)
+            ├── pages/
+            │ └── *.ts (Page Objects)
+            ├── utils/
+            │ ├── ApiUtils.ts
+            │ ├── Logger.ts
+            │ ├── env.ts
+            │ ├── SchemaValidator.ts
+            │ ├── TestDataLoader.ts
+            │ └── Misc.ts
+            ├── schemas/
+            │ └── *.schema.json
+            ├── test-data/
+            │ └── *.json
+            ├── allure-results/
+            └── playwright.config.ts
 
 
 ---
