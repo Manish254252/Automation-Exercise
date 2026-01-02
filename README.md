@@ -64,8 +64,7 @@ This repository contains automated test scripts for various user flows and API e
 ```bash
 git clone https://github.com/Manish254252/Automation-Exercise.git
 cd Automation-Exercise
-
-Install dependencies
+### 2.Install dependencies
 npm install
 
 
