@@ -5,7 +5,7 @@ import { loadTestData } from "../../utils/TestDataLoader";
 import { validateSchema } from "../../utils/SchemaValidator";
 import posts from "../schemas/Beeceptor.schema.json"
 import User from "../schemas/User.schema.json"
-import { BASE_URLS ,HEADERS} from "../../utils/env";
+import { BASE_URLS } from "../../utils/env";
 
 
 
@@ -40,7 +40,7 @@ test('Beeceptor Placeholder API 3', async ({ request },testInfo) => {
     const status = (await response).status()    
     expect(status).toBe(200)
     logger.info(await json)
-    // validateSchema(posts,await json)
+    validateSchema(posts,await json)
 })
 
 test('Beeceptor Placeholder API 4', async ({ request },testInfo) => {
