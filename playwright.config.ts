@@ -14,7 +14,7 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   //  globalSetup: require.resolve('D:\\VS_CODE\\GlobalSetUp\\GlobalSetUp.ts'),
   testDir: './tests',
-  timeout:180000,  
+  timeout: 180000,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -25,7 +25,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   // workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-   reporter: [
+  reporter: [
     ['allure-playwright'],
     ['html', { open: 'on-failure' }]
   ],
@@ -35,10 +35,9 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
-    headless:false,
-    screenshot:'on',
-    video:'on'
+    trace: 'retain-on-failure',
+    video: 'retain-on-failure',
+    screenshot: 'only-on-failure',
   },
 
   /* Configure projects for major browsers */
@@ -46,7 +45,7 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-    
+
     },
 
     // {
