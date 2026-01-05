@@ -6,14 +6,14 @@ export function loadTestData(testInfo: TestInfo): any {
   // Get spec file name (without extension)
   const specFileName = path.basename(testInfo.file, '.spec.ts');
 
-  const jsonFilePath = path.resolve(
-    __dirname,
-    `../tests/testData/${specFileName}.json`
-  );
+ const projectRoot = process.cwd(); // ✅ CI-safe
 
-  if (!fs.existsSync(jsonFilePath)) {
-    throw new Error(`Test data file not found: ${jsonFilePath}`);
-  }
+const jsonFilePath = path.join(
+  projectRoot,
+  'tests',
+  'testData',
+  `${specFileName}.json`
+);
 
   const jsonData = JSON.parse(fs.readFileSync(jsonFilePath, 'utf-8'));
 
