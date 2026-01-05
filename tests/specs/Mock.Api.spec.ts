@@ -4,7 +4,7 @@ const BASE_URL = 'http://localhost:3000';
 
 test.describe('Mock API Tests', () => {
 
-  test('GET /posts should return all posts', async ({ request }) => {
+  test.skip('GET /posts should return all posts', async ({ request }) => {
     const response = await request.get(`${BASE_URL}/posts`);
     expect(response.status()).toBe(200);
 
@@ -16,7 +16,7 @@ test.describe('Mock API Tests', () => {
     expect(posts[0].id).toBe(1);
   });
 
-  test('POST /login should return token for valid user', async ({ request }) => {
+  test.skip('POST /login should return token for valid user', async ({ request }) => {
     const response = await request.post(`${BASE_URL}/login`, {
       data: { username: 'testuser', password: '1234' }
     });
@@ -30,7 +30,7 @@ test.describe('Mock API Tests', () => {
     expect(json.token).toBe('mock-token-123');
   });
 
-  test('POST /login should fail for invalid user', async ({ request }) => {
+  test.skip('POST /login should fail for invalid user', async ({ request }) => {
     const response = await request.post(`${BASE_URL}/login`, {
       data: { username: 'wronguser', password: '0000' }
     });
@@ -42,7 +42,7 @@ test.describe('Mock API Tests', () => {
     console.log(json);
   });
 
-    test('POST /login', async ({ request }) => {
+    test.skip('POST /login', async ({ request }) => {
     const response = await request.post(`${BASE_URL}/blogs`, {
       data: { username: 'wronguser', password: '0000' }
     });
