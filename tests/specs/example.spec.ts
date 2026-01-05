@@ -2,6 +2,9 @@ import { test, expect } from '@playwright/test';
 import { SignUpPage } from '../pages/SignUpPage';
 import { UserData } from '../../utils/Data';
 import { generateRandomData } from '../../utils/Misc';
+import path from 'path';
+import fs from 'fs'
+import { cwd } from 'process';
 
 let userData: UserData;
 test.beforeEach(async () => {
@@ -15,6 +18,41 @@ test.beforeEach(async () => {
     zipcode: generateRandomData("zipcode"),
     mobile: generateRandomData("mobile")
   };
+})
+
+test.afterEach(async ({page},testInfo)=>{
+  const video = page.video();
+  if (!video) return;
+
+  try {
+    const tempPath = await video.path();
+    if (!tempPath || !fs.existsSync(tempPath)) return;
+
+    // Project root
+    const projectRoot = process.cwd();
+
+    // Folder for all videos
+    const videosRoot = path.join(projectRoot, 'videos');
+
+    // Create spec file folder (e.g., example.spec.ts)
+    const specFolder = path.join(videosRoot, path.basename(testInfo.file));
+    if (!fs.existsSync(specFolder)) fs.mkdirSync(specFolder, { recursive: true });
+
+    // Final video path: Test title as file name
+    const finalPath = path.join(
+      specFolder,
+      `${testInfo.title.replace(/[^\w]+/g, '_')}.webm`
+    );
+
+    // Save and delete temp video
+    await video.saveAs(finalPath);
+    await video.delete();
+
+    console.log('✅ Video saved:', finalPath);
+  } catch (err) {
+    console.warn('⚠️ Video save failed:', err);
+  }
+
 })
 
 test('Test Case 1: Register User', async ({ page }) => {
@@ -47,6 +85,7 @@ test('Test Case 1: Register User', async ({ page }) => {
   await test.step('Delete account and verify account deletion', async () => {
     await signup.clickDeleteAccountAndVerifyAccDeleted();
   });
+  page.close()
 });
 
 
@@ -79,6 +118,7 @@ test('Test Case 2: Login User with correct email and password', async ({ page })
     await signup.verifyDeleteAccIsVisible();
     await signup.clickDeleteAccountAndVerifyAccDeleted();
   });
+  page.close()
 });
 
 test('Test Case 3: Login User with incorrect email and password', async ({ page }) => {
@@ -93,8 +133,10 @@ test('Test Case 3: Login User with incorrect email and password', async ({ page 
   });
 
   await test.step('Verify incorrect login error message is displayed', async () => {
+
     await signup.isIncorrectLoginErrorVisible();
   });
+  page.close()
 });
 
 
@@ -123,4 +165,5 @@ test('Test Case 4: Logout User', async ({ page }) => {
   await test.step('Logout again and verify session ends', async () => {
     await signup.clickLogout();
   });
+  page.close()
 });

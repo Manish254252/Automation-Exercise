@@ -77,6 +77,6 @@ export class SignUpPage {
     }
 
     async isIncorrectLoginErrorVisible() {
-        expect(this.page.getByText("Your email or password is incorrect!")).toBeVisible()
+       await expect(this.page.getByText("Your email or password is incorrect!")).toBeVisible()
     }
 }
