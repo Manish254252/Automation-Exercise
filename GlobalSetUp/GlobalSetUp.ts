@@ -1,4 +1,6 @@
-import { chromium, FullConfig } from '@playwright/test';
+import { chromium, FullConfig ,test as baseTest } from '@playwright/test';
+import fs from 'fs'
+import path from 'path';
 
 async function globalSetup(config: FullConfig) {
     const browser = await chromium.launch();
