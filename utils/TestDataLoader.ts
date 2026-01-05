@@ -7,7 +7,7 @@ export function loadTestData(testInfo: TestInfo): any {
 
   const projectRoot = process.cwd();
 
-  const testDataDir = path.join(projectRoot, 'tests', 'testData');
+  const testDataDir = path.join(projectRoot, 'tests', 'TestData');
   const jsonFilePath = path.join(testDataDir, `${specFileName}.json`);
 
   // 🔍 CI debug (can remove later)
