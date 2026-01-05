@@ -67,6 +67,7 @@ test('Test Case 1: Register User', async ({ page }) => {
   });
 
   await test.step('Fill account information', async () => {
+    //
     await signup.fillAccountInfo(userData);
   });
 
