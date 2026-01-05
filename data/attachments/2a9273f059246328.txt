@@ -1,0 +1,1 @@
+✅ Video saved: /home/runner/work/Automation-Exercise/Automation-Exercise/videos/example.spec.ts/Test_Case_1_Register_User.webm

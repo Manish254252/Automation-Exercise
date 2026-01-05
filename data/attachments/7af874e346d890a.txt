@@ -1,0 +1,1 @@
+✅ Video saved: /home/runner/work/Automation-Exercise/Automation-Exercise/videos/example.spec.ts/Test_Case_2_Login_User_with_correct_email_and_password.webm
