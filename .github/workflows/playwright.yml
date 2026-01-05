@@ -2,7 +2,7 @@ name: Playwright Tests with Allure
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
     branches: [test1]
   workflow_dispatch:
