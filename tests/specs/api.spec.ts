@@ -151,7 +151,7 @@ test('Json Placeholder API 6 ', async ({ request }) => {
     const statuscode = response.status()
     logger.info(json);
     logger.info(statuscode);
-    // logger.info(response.headersArray());
+    logger.info(response.headersArray());
     logger.info(response.headers());
     expect(statuscode).toBe(200)
 
