@@ -4,6 +4,8 @@ import { logger } from "../../utils/Logger";
 import { ApiClient } from "../../utils/ApiUtils";
 import { loadTestData } from "../../utils/TestDataLoader";
 import { BASE_URLS } from "../../utils/env";
+import fs from 'fs';
+import { logApiResponse } from "../../utils/apiLogger";
 
 test('API 1: Get All Products List', async ({ request }) => {
 
@@ -179,4 +181,21 @@ test('Json Placeholder API 7 ', async ({ request }) => {
     expect(statuscode).toBe(200)
 
 
+})
+
+test('Json print', async ({ request }) => {
+
+    const response = await request.get("https://dummyjson.com/users");
+    // logApiResponse(await response.json())
+    logger.debug(test.info().status)
+    logger.debug(test.info().title)
+    logger.debug(test.info().line)
+    logger.debug(test.info().annotations)
+    logger.debug(test.info().column)
+    logger.debug(test.info().expectedStatus)
+    logger.debug(test.info().file)
+    logger.debug(test.info().retry)
+    logger.debug(await test.info().attach("test"))
+
+    
 })
