@@ -1,0 +1,60 @@
+2026-01-06 07:50:36 [info]: Get API Executed
+2026-01-06 07:50:36 [info]: [
+  {
+    id: '3',
+    name: 'Apple iPhone 12 Pro Max',
+    data: { color: 'Cloudy White', 'capacity GB': 512 }
+  },
+  {
+    id: '5',
+    name: 'Samsung Galaxy Z Fold2',
+    data: { price: 689.99, color: 'Brown' }
+  },
+  {
+    id: '7',
+    name: 'Apple MacBook Pro 16',
+    data: {
+      year: 2019,
+      price: 1849.99,
+      'CPU model': 'Intel Core i9',
+      'Hard disk size': '1 TB'
+    }
+  }
+]
+2026-01-06 07:50:36 [info]: 200
+2026-01-06 07:50:36 [info]: [
+  { name: 'Date', value: 'Tue, 06 Jan 2026 07:50:36 GMT' },
+  { name: 'Content-Type', value: 'application/json' },
+  { name: 'Transfer-Encoding', value: 'chunked' },
+  { name: 'Connection', value: 'keep-alive' },
+  { name: 'Server', value: 'cloudflare' },
+  {
+    name: 'Nel',
+    value: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+  },
+  { name: 'Vary', value: 'Origin' },
+  { name: 'Vary', value: 'Access-Control-Request-Method' },
+  { name: 'Vary', value: 'Access-Control-Request-Headers' },
+  { name: 'cf-cache-status', value: 'DYNAMIC' },
+  {
+    name: 'Report-To',
+    value: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=qQNcOeYUp2ZJ3f8IhED8H0EHCERSgBMGOxWs45D6rhDzOZrKtSMX5Y6XuGSHuF%2B8fPU6QH19dR%2FxaxMppYx2CX4VL5esfYEvWNqirR%2BXLSWoV3E%3D"}]}'
+  },
+  { name: 'Content-Encoding', value: 'br' },
+  { name: 'CF-RAY', value: '9b99a01e4dcd08d6-LAX' },
+  { name: 'alt-svc', value: 'h3=":443"; ma=86400' }
+]
+2026-01-06 07:50:36 [info]: {
+  date: 'Tue, 06 Jan 2026 07:50:36 GMT',
+  'content-type': 'application/json',
+  'transfer-encoding': 'chunked',
+  connection: 'keep-alive',
+  server: 'cloudflare',
+  nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}',
+  vary: 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers',
+  'cf-cache-status': 'DYNAMIC',
+  'report-to': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=qQNcOeYUp2ZJ3f8IhED8H0EHCERSgBMGOxWs45D6rhDzOZrKtSMX5Y6XuGSHuF%2B8fPU6QH19dR%2FxaxMppYx2CX4VL5esfYEvWNqirR%2BXLSWoV3E%3D"}]}',
+  'content-encoding': 'br',
+  'cf-ray': '9b99a01e4dcd08d6-LAX',
+  'alt-svc': 'h3=":443"; ma=86400'
+}
