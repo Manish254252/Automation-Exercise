@@ -1,0 +1,11 @@
+2026-01-06 06:58:45 [info]: https://json-placeholder.mock.beeceptor.com
+2026-01-06 06:58:45 [info]: { method: 'GET', endpoint: '/posts/1', status: 200 }
+{
+  userId: 1,
+  id: 1,
+  title: 'Introduction to Artificial Intelligence',
+  body: 'Learn the basics of Artificial Intelligence and its applications in various industries.',
+  link: 'https://example.com/article1',
+  comment_count: 8
+}
+200
