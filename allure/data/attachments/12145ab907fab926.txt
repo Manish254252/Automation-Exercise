@@ -1,0 +1,13 @@
+{
+  success: true,
+  message: 'Login successful',
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNjgwMjM5MDIyLCJleHAiOjI2MTkzMDAwMDAsImlzcyI6ImJlZWNlcHRvci5jb20iLCJhdWQiOiJCZWVjZXB0b3IgdXNlcnMifQ.D-wEdKyDTOk3GlHs8d2yjfYGZ9gYqWfx2wDPY7mTf-w'
+}
+200
+APIResponse: 200 OK
+  Access-Control-Allow-Origin: *
+  Alt-Svc: h3=":443"; ma=2592000
+  Content-Length: 125
+  Content-Type: text/plain
+  Date: Tue, 06 Jan 2026 07:31:07 GMT
+  Vary: Accept-Encoding
