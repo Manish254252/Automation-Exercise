@@ -121,3 +121,11 @@ jobs:
           publish_dir: gh-pages
           user_name: github-actions[bot]
           user_email: github-actions[bot]@users.noreply.github.com
+
+      - name: Report test status
+        if: always()
+        run: |
+           if [ ${{ steps.tests. outcome }} == 'failure' ]; then
+            echo ":: error:: Playwright tests failed"
+             exit 1
+            fi
