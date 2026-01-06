@@ -125,7 +125,9 @@ jobs:
       - name: Report test status
         if: always()
         run: |
-           if [ ${{ steps.tests. outcome }} == 'failure' ]; then
-            echo ":: error:: Playwright tests failed"
+          if [ "${{ steps.tests.outcome }}" == "failure" ]; then
+             echo "❌ Playwright tests failed"
              exit 1
-            fi
+          else
+            echo "✅ All tests passed"
+          fi
