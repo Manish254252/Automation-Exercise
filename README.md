@@ -123,4 +123,6 @@ npx allure generate allure-results --clean -o allure-report
 ```
 npx allure open allure-report
 ```
+## Link For Allure Report 
+https://manish254252.github.io/Automation-Exercise/
 
