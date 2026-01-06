@@ -1,5 +1,5 @@
 ### ![Playwright Tests](https://github.com/Manish254252/Automation-Exercise/actions/workflows/playwright.yml/badge.svg)
-### ![Playwright CI Badge](https://gist.githubusercontent.com/Manish254252/4e6e0111e58839ff5c5b5ef688e432d0/raw/ci-badge.svg)
+
 
 
 
