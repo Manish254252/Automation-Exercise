@@ -103,7 +103,7 @@ jobs:
       - name: Update CI Badge
         uses: gaelgirodon/ci-badges-action@v1
         with:
-        #  gist-id: gist:4e6e0111e58839ff5c5b5ef688e432d0
-         gist-id: ci-badge.svg
+         gist-id: gist:4e6e0111e58839ff5c5b5ef688e432d0
+        #  gist-id: ci-badge.svg
          token: ${{ secrets.GIST_TOKEN }}
 
