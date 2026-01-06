@@ -1,1 +1,0 @@
-✅ Video saved: /home/runner/work/Automation-Exercise/Automation-Exercise/videos/example.spec.ts/Test_Case_4_Logout_User.webm
