@@ -39,7 +39,7 @@ jobs:
         run: npx playwright test
         env:
           CI: true
-        continue-on-error: true
+        
 
       # ---------- Artifacts ----------
       - name: Upload Playwright HTML Report (artifact)
