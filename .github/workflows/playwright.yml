@@ -68,6 +68,14 @@ jobs:
           name: allure-report-${{ github. run_number }}-${{ github.run_attempt }}
           path: allure-report/
           retention-days: 30
+      - name: Upload Playwright Videos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with: 
+          name: playwright-videos-${{ github.run_number }}-${{ github.run_attempt }}
+          path: videos/
+          retention-days: 30
+
 
       # ---------- Prepare GitHub Pages ----------
       - name: Prepare GitHub Pages content
