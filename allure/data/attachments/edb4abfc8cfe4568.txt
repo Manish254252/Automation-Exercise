@@ -1,9 +1,0 @@
-2026-01-06 08:48:34 [debug]: passed
-2026-01-06 08:48:34 [debug]: Json print
-2026-01-06 08:48:34 [debug]: 186
-2026-01-06 08:48:34 [debug]: []
-2026-01-06 08:48:34 [debug]: 5
-2026-01-06 08:48:34 [debug]: passed
-2026-01-06 08:48:34 [debug]: /home/runner/work/Automation-Exercise/Automation-Exercise/tests/specs/api.spec.ts
-2026-01-06 08:48:34 [debug]: 0
-2026-01-06 08:48:34 [debug]: debug

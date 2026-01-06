@@ -1,0 +1,10 @@
+2026-01-06 08:55:28 [info]: https://json-placeholder.mock.beeceptor.com
+2026-01-06 08:55:28 [info]: https://json-placeholder.mock.beeceptor.com
+2026-01-06 08:55:28 [info]: { method: 'POST', endpoint: '/login', status: 200 }
+2026-01-06 08:55:28 [info]: [object Object]/login
+{
+  success: true,
+  message: 'Login successful',
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNjgwMjM5MDIyLCJleHAiOjI2MTkzMDAwMDAsImlzcyI6ImJlZWNlcHRvci5jb20iLCJhdWQiOiJCZWVjZXB0b3IgdXNlcnMifQ.D-wEdKyDTOk3GlHs8d2yjfYGZ9gYqWfx2wDPY7mTf-w'
+}
+200
