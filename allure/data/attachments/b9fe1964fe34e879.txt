@@ -1,2 +1,0 @@
-2026-01-06 07:31:12 [info]: https://json-placeholder.mock.beeceptor.com
-2026-01-06 07:31:12 [info]: { method: 'GET', endpoint: '/users', status: 200 }
