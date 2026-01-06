@@ -54,6 +54,20 @@ jobs:
             echo "No allure-results found, skipping Allure report generation"
             mkdir -p allure-report
           fi
+      - name: Upload Playwright Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name:  playwright-report-${{ github.run_number }}-${{ github.run_attempt }}
+          path: playwright-report/
+          retention-days: 30
+      - name:  Upload Allure Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-${{ github. run_number }}-${{ github.run_attempt }}
+          path: allure-report/
+          retention-days: 30
 
       # ---------- Prepare GitHub Pages ----------
       - name: Prepare GitHub Pages content
