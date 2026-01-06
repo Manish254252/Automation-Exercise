@@ -1,5 +1,6 @@
 ### ![Playwright Tests](https://github.com/Manish254252/Automation-Exercise/actions/workflows/playwright.yml/badge.svg)
-### ![CI Badge](https://gist.githubusercontent.com/<username>/<gist-id>/raw/<file>.svg)
+### ![Playwright CI Badge](https://gist.githubusercontent.com/Manish254252/7d78878ad83404cf032c94012ddc4fb7/raw/<hash>/ci-badge.svg)
+
 
 
 # Automation-Exercise Test Framework 🧪
