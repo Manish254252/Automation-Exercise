@@ -35,6 +35,7 @@ jobs:
       # ---------- Run Tests ----------
       - name: Run Playwright tests
         run: npx playwright test
+        id: tests
         env:
           CI: true
         continue-on-error: true   # keep workflow running even if tests fail
