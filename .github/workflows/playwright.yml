@@ -100,10 +100,4 @@ jobs:
           publish_dir: gh-pages
           user_name: github-actions[bot]
           user_email: github-actions[bot]@users.noreply.github.com
-      - name: Update CI Badge
-        uses: gaelgirodon/ci-badges-action@v1
-        with:
-         gist-id: 4e6e0111e58839ff5c5b5ef688e432d0
-         file: ci-badge.svg
-         token: ${{ secrets.GIST_TOKEN }}
-
+   
