@@ -1,3 +1,5 @@
+### ![Playwright Tests](https://github.com/Manish254252/Automation-Exercise/actions/workflows/playwright.yml/badge.svg)
+
 # Automation-Exercise Test Framework 🧪
 
 A full-fledged **Playwright Test Automation Framework** for both **UI and API testing** of the AutomationExercise website.
@@ -123,6 +125,25 @@ npx allure generate allure-results --clean -o allure-report
 ```
 npx allure open allure-report
 ```
-## Link For Allure Report 
-https://manish254252.github.io/Automation-Exercise/
+## 📊 Test Execution Reports
+
+All automated test execution reports are generated and published automatically using **GitHub Actions**.
+
+### 🔹 Latest Reports (GitHub Pages)
+
+- 🟢 **Playwright HTML Report**  
+  👉 https://manish254252.github.io/Automation-Exercise/playwright/
+
+- 🟣 **Allure Report**  
+  👉 https://manish254252.github.io/Automation-Exercise/allure/
+
+### 📌 Notes
+- Reports are updated automatically on every push to the **master** branch.
+- Reports include:
+  - Test execution status
+  - Screenshots & videos (on failure)
+  - API logs and attachments
+- For pull requests, reports are available as **GitHub Action artifacts**.
+
+
 
