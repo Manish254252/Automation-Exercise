@@ -1,4 +1,4 @@
-name: Playwright Tests with Reports
+name: Playwright Tests with Allure Reports
 
 on:
   push:
@@ -9,86 +9,110 @@ on:
 
 jobs:
   playwright-tests:
-    runs-on: ubuntu-latest
     timeout-minutes: 60
+    runs-on: ubuntu-latest
 
     permissions:
       contents: write
 
     steps:
       # ---------- Checkout ----------
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       # ---------- Node ----------
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      # ---------- Install dependencies ----------
-      - run: npm ci
+      # ---------- Install ----------
+      - name: Install dependencies
+        run: npm ci
 
-      - run: npx playwright install --with-deps
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
 
-      # ---------- Run Playwright Tests ----------
-      - name: Run Playwright Tests
-        id: run_tests
+      # ---------- Prepare folders ----------
+      - name: Prepare folders
         run: |
-          # Run tests with HTML + JSON reporters
-          npx playwright test --reporter=html,json:playwright-report/result.json || true
+          mkdir -p playwright-report
+          mkdir -p videos
+          mkdir -p test-results
+          mkdir -p allure-results
+          mkdir -p allure-report
+
+      # ---------- Run Playwright tests ----------
+      - name: Run Playwright tests
+        run: npx playwright test --reporter=list,html,allure-playwright
         env:
           CI: true
 
-      # ---------- Install Allure CLI ----------
-      - name: Install Allure CLI
+      # ---------- Fail workflow if tests failed ----------
+      - name: Fail workflow if tests failed
         run: |
-          sudo apt-get update
-          sudo apt-get install -y default-jre
-          npm install -g allure-commandline
-
-      # ---------- Generate Allure report ----------
-      - name: Generate Allure report
-        run: |
-          allure generate allure-results --clean -o allure-report || true
+          if [ -f playwright-report/result.json ]; then
+            FAIL_COUNT=$(jq '.stats.failed' playwright-report/result.json)
+            if [ "$FAIL_COUNT" -gt 0 ]; then
+              echo "❌ Tests failed: $FAIL_COUNT"
+              exit 1
+            else
+              echo "✅ All tests passed"
+            fi
+          else
+            echo "⚠️ Playwright result JSON not found"
+          fi
 
       # ---------- Upload Artifacts ----------
       - name: Upload Playwright HTML Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
           path: playwright-report/
           retention-days: 15
 
-      - name: Upload Allure Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: allure-report
-          retention-days: 15
-
       - name: Upload Test Videos
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-videos
           path: videos/
           retention-days: 15
 
-      - name: Upload Test Results
+      - name: Upload Test Results JSON
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: test-results/
+          path: playwright-report/result.json
           retention-days: 15
 
-      # ---------- Deploy Reports to GitHub Pages ----------
+      # ---------- Allure ----------
+      - name: Install Allure CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y default-jre
+          npm install -g allure-commandline
+
+      - name: Generate Allure report
+        run: allure generate allure-results --clean -o allure-report
+
+      - name: Upload Allure report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
+          retention-days: 15
+
+      # ---------- Optional: Deploy reports to GitHub Pages ----------
       - name: Prepare GitHub Pages content
         if: github.ref == 'refs/heads/master'
         run: |
           mkdir -p gh-pages/playwright gh-pages/allure
-
           cp -r playwright-report/* gh-pages/playwright/
           cp -r allure-report/* gh-pages/allure/
-
-          # Landing page
           cat <<EOF > gh-pages/index.html
           <!DOCTYPE html>
           <html>
@@ -96,7 +120,7 @@ jobs:
             <title>Automation Reports</title>
             <style>
               body { font-family: Arial; padding: 40px; }
-              a { font-size: 18px; display:block; margin-bottom:10px; }
+              a { font-size: 18px; }
             </style>
           </head>
           <body>
@@ -115,14 +139,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: gh-pages
-
-      # ---------- Fail workflow if any test failed ----------
-      - name: Fail workflow if tests failed
-        run: |
-          FAIL_COUNT=$(jq '.stats.failed' playwright-report/result.json)
-          if [ "$FAIL_COUNT" -gt 0 ]; then
-            echo "❌ Tests failed: $FAIL_COUNT"
-            exit 1
-          else
-            echo "✅ All tests passed"
-          fi
