@@ -22,7 +22,7 @@ test.describe('Mock API Tests', () => {
     });
     
     // JSON Server returns 201 for POST
-    expect(response.status()).toBe(200);
+    expect(response.status()).toBe(201);
 
     const json = await response.json();
     console.log(json);
