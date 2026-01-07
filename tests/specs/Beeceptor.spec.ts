@@ -33,7 +33,7 @@ test('Beeceptor Placeholder API 2', async ({ request },testInfo) => {
 })
 
 test('Beeceptor Placeholder API 3', async ({ request },testInfo) => {
-    // const testData = loadTestData(testInfo)
+    
     const ApiUtils = new ApiClient(request,BASE_URLS.Bee)
     const response = ApiUtils.get("/posts")
     const json = (await response).json()
@@ -44,7 +44,7 @@ test('Beeceptor Placeholder API 3', async ({ request },testInfo) => {
 })
 
 test('Beeceptor Placeholder API 4', async ({ request },testInfo) => {
-    // const testData = loadTestData(testInfo)
+    
     const ApiUtils = new ApiClient(request,BASE_URLS.Bee)
     const response = ApiUtils.get("/users")
     const json = (await response).json()

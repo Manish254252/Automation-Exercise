@@ -12,7 +12,7 @@ test('API 1: Get All Products List', async ({ request }) => {
     const response = await request.get(" https://automationexercise.com/api/productsList")
     console.log(response.status());
 
-    //   console.log(json);
+      console.log(await response.json());
 
 })
 test('API 2: POST To All Products List', async ({ request }) => {
@@ -30,7 +30,7 @@ test('API 3: Get All Brands List', async ({ request }) => {
     const json = await (response).json()
     console.log(response.status());
 
-    //   console.log(json);
+      console.log(json);
 
 })
 
@@ -186,7 +186,7 @@ test('Json Placeholder API 7 ', async ({ request }) => {
 test('Json print', async ({ request }) => {
 
     const response = await request.get("https://dummyjson.com/users");
-    // logApiResponse(await response.json())
+    logApiResponse(await response.json())
     logger.debug(test.info().status)
     logger.debug(test.info().title)
     logger.debug(test.info().line)
