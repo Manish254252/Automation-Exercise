@@ -48,7 +48,7 @@ test.describe('Mock API Tests', () => {
     });
 
     // JSON Server will create a new entry, but in real test you may want 401
-    // expect(response.status()).toBe(200);
+    expect(response.status()).toBe(200);
 
     const json = await response.json();
     console.log(json);
