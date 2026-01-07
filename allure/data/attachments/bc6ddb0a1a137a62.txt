@@ -1,0 +1,44 @@
+2026-01-07 09:30:08 [info]: {
+  apiSummary: [
+    { id: 1, firstName: 'Emily', lastName: 'Johnson' },
+    { id: 2, firstName: 'Michael', lastName: 'Williams' },
+    { id: 3, firstName: 'Sophia', lastName: 'Brown' },
+    { id: 4, firstName: 'James', lastName: 'Davis' },
+    { id: 5, firstName: 'Emma', lastName: 'Miller' },
+    { id: 6, firstName: 'Olivia', lastName: 'Wilson' },
+    { id: 7, firstName: 'Alexander', lastName: 'Jones' },
+    { id: 8, firstName: 'Ava', lastName: 'Taylor' },
+    { id: 9, firstName: 'Ethan', lastName: 'Martinez' },
+    { id: 10, firstName: 'Isabella', lastName: 'Anderson' },
+    { id: 11, firstName: 'Liam', lastName: 'Garcia' },
+    { id: 12, firstName: 'Mia', lastName: 'Rodriguez' },
+    { id: 13, firstName: 'Noah', lastName: 'Hernandez' },
+    { id: 14, firstName: 'Charlotte', lastName: 'Lopez' },
+    { id: 15, firstName: 'William', lastName: 'Gonzalez' },
+    { id: 16, firstName: 'Avery', lastName: 'Perez' },
+    { id: 17, firstName: 'Evelyn', lastName: 'Sanchez' },
+    { id: 18, firstName: 'Logan', lastName: 'Torres' },
+    { id: 19, firstName: 'Abigail', lastName: 'Rivera' },
+    { id: 20, firstName: 'Jackson', lastName: 'Evans' },
+    { id: 21, firstName: 'Madison', lastName: 'Collins' },
+    { id: 22, firstName: 'Elijah', lastName: 'Stewart' },
+    { id: 23, firstName: 'Chloe', lastName: 'Morales' },
+    { id: 24, firstName: 'Mateo', lastName: 'Nguyen' },
+    { id: 25, firstName: 'Harper', lastName: 'Kelly' },
+    { id: 26, firstName: 'Evelyn', lastName: 'Gonzalez' },
+    { id: 27, firstName: 'Daniel', lastName: 'Cook' },
+    { id: 28, firstName: 'Lily', lastName: 'Lee' },
+    { id: 29, firstName: 'Henry', lastName: 'Hill' },
+    { id: 30, firstName: 'Addison', lastName: 'Wright' }
+  ]
+}
+✅ API response saved to api-response.txt
+2026-01-07 09:30:08 [debug]: passed
+2026-01-07 09:30:08 [debug]: Json print
+2026-01-07 09:30:08 [debug]: 186
+2026-01-07 09:30:08 [debug]: []
+2026-01-07 09:30:08 [debug]: 5
+2026-01-07 09:30:08 [debug]: passed
+2026-01-07 09:30:08 [debug]: /home/runner/work/Automation-Exercise/Automation-Exercise/tests/specs/api.spec.ts
+2026-01-07 09:30:08 [debug]: 0
+2026-01-07 09:30:08 [debug]: debug
